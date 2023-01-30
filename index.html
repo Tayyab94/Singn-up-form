@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" >
+    <script src="https://kit.fontawesome.com/c18b08c464.js" crossorigin="anonymous"></script>
+    <title>Login/Registration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-box">
+            <span id="toggle-btn"></span>
+            <div class="btn active" id="signInBtn">
+                <i class="fa-solid fa-user"></i><p>SignIn</p>
+            </div>
+            <div class="btn" id="signUpBtn">
+                <i class="fa-solid fa-user-plus"></i><p>SignIn</p>
+            </div>
+
+            <form class="form" id="signIn-form">
+                <div class="input-box">
+                    <i class="fa-solid fa-user-plus"></i><input type="text" placeholder="Enter User Name">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-key"></i> <input type="text" placeholder="Enter Password">
+                  </div>
+
+                  <a href="#">Forget Password</a>
+                  <input type="checkbox" ><label>Remember Me</label>
+                  <button>Signin</button>
+                  <div class="account">
+                    <p>Don't you have an account?</p><a href="#">SingUp</a>
+                  </div>
+            </form>
+
+            <form class="form" id="signUp-form">
+                <div class="input-box">
+                    <i class="fa-solid fa-user-plus"></i><input type="text" placeholder="Enter User Name">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i> <input type="text" placeholder="Enter email">
+                  </div>
+                  <div class="input-box">
+                    <i class="fa-solid fa-key"></i> <input type="password" placeholder="Enter Password">
+                  </div>
+
+                  <a href="#">Already Account</a>
+                  <input type="checkbox" ><label>Term & Conditions</label>
+                  <button>SignUp</button>
+                 
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let signInForm =document.getElementById("signIn-form")
+        let signUpForm= document.getElementById("signUp-form")
+        let togglebtn= document.getElementById("toggle-btn")
+        let signInBtn = document.getElementById("signInBtn")
+        let signUpBtn= document.getElementById("signUpBtn")
+
+        signInBtn.onclick=()=>{
+            signInForm.style.left='0px'
+            signUpForm.style.left='340px'
+            togglebtn.style.left="45px"
+            signInBtn.classList.add("active")
+            signUpBtn.classList.remove("active")
+        }
+        
+        signUpBtn.onclick=()=>{
+            signInForm.style.left='-340px'
+            signUpForm.style.left='0px'
+            togglebtn.style.left="188px"
+            signInBtn.classList.remove("active")
+            signUpBtn.classList.add("active")
+        }
+    </script>
+</body>
+</html>
